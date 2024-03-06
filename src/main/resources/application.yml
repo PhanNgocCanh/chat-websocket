@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/chat-app
+    username: postgres
+    password: postgres
+    hikari:
+      auto-commit: false
+      pool-name: Hikari
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+      ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+base64-secret: NzRkYWQ5ZWViZjkxYjg4ZTUyZWIxODFiMTBhOWFlMjhjYzk3YTE3Yjc2YjY0NTM3YjYyMmE3YTdkZWQzOGY3NzBjMjViOTMyNTFmMDkwYzhhZmViMWViYzllZjM2MmQxMTNkZDQ4YTEzNzAyYTg1NzA4MWE0OWFiOGQxY2I4Njg=
+token-expire: 86400
+
+minio:
+ url: http://localhost:9000
+ accessKey: minio_root
+ secretKey: minio_root
+ default-bucket: chatapp
